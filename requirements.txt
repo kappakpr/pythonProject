@@ -1,6 +1,6 @@
-fastapi==0.74.*
-requests==2.27.*
+fastapi==0.109.*
+requests==2.31.*
 uvicorn[standard]==0.17.*
 sentencepiece==0.1.*
-torch==1.11.*
+torch==1.13.1
 transformers==4.*
