@@ -15,6 +15,13 @@ docker run --name textgenfastapi -p 7860:7860 textgenfastapi
 http://localhost:7860/docs
 click on generate , try it out, enter some text and click on Execute to view the output from text generator
 
+to test from browser , enter the parameter as below
+0.0.0.0:7860/generate?text=how%20is%20it%20going
+
+%20 is for space
+
+json output from app :- output	"to be a good day"
+
 
 ######### build output ############
 
