@@ -1,0 +1,155 @@
+######## docker build command ############
+
+docker build -t textgenfastapi:latest .
+
+name and tag textgenfastapi:latest
+. current directory
+
+####### docker run command ############
+
+docker run --name textgenfastapi -p 7860:7860 textgenfastapi
+
+
+####### launch URL and try docs from FASTAPI ######
+
+http://localhost:7860/docs
+click on generate , try it out, enter some text and click on Execute to view the output from text generator
+
+
+######### build output ############
+
+Last login: Wed Jun  5 01:01:28 on ttys000
+melo@PRAVISHs-MacBook-Pro ~ % pw
+zsh: command not found: pw
+melo@PRAVISHs-MacBook-Pro ~ % pwd
+/Users/melo
+melo@PRAVISHs-MacBook-Pro ~ % pwd
+/Users/melo
+melo@PRAVISHs-MacBook-Pro ~ % ls
+Desktop				LightGBM_compilation.log	Public
+Documents			Movies				PycharmProjects
+Downloads			Music				pyprogs
+Library				Pictures			tokens
+melo@PRAVISHs-MacBook-Pro ~ % cd pyprogs
+melo@PRAVISHs-MacBook-Pro pyprogs % ls
+Untitled.ipynb				homecredit1
+Untitled1.ipynb				notebooks
+clicktest				open-solution-home-credit-master
+gemini1					pythonflasksession
+home-credit-credit-risk-model-stability	textgenFASTAPI1
+melo@PRAVISHs-MacBook-Pro pyprogs % cd textgenFASTAPI1
+melo@PRAVISHs-MacBook-Pro textgenFASTAPI1 % ls
+pythonProject
+melo@PRAVISHs-MacBook-Pro textgenFASTAPI1 % cd pythonProject
+melo@PRAVISHs-MacBook-Pro pythonProject % ls
+Dockerfile		app.py			requirements.txt
+melo@PRAVISHs-MacBook-Pro pythonProject % docker build -t textgenfastapi:latest .
+[+] Building 40.6s (13/13) FINISHED                                                          docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                         0.0s
+ => => transferring dockerfile: 857B                                                                         0.0s
+ => [internal] load metadata for docker.io/library/python:3.9                                                1.4s
+ => [auth] library/python:pull token for registry-1.docker.io                                                0.0s
+ => [internal] load .dockerignore                                                                            0.0s
+ => => transferring context: 2B                                                                              0.0s
+ => [1/7] FROM docker.io/library/python:3.9@sha256:2016df4760e0081ecc2c0f731f51f42f16c26a96fb86dc64b0696f1  14.7s
+ => => resolve docker.io/library/python:3.9@sha256:2016df4760e0081ecc2c0f731f51f42f16c26a96fb86dc64b0696f19  0.0s
+ => => sha256:51cd5f8f608f832afd85dc82fbac4aea05183fd7fccf555dd4a53a4bbe06b013 63.99MB / 63.99MB             4.9s
+ => => sha256:2016df4760e0081ecc2c0f731f51f42f16c26a96fb86dc64b0696f192d940cbc 1.86kB / 1.86kB               0.0s
+ => => sha256:c8318b772f09c87bff50ee6c469122c9f7230ccb1d24cf071668aa03675b4ec9 2.01kB / 2.01kB               0.0s
+ => => sha256:53796940744d80a74f1810ad93d5f2e4243675a4cbff168cd55318c68d6d79b2 7.94kB / 7.94kB               0.0s
+ => => sha256:1e60a453843e00d6f3d4242dbd696365f0894e3ca2f02f4ce1ab098d7ff7907f 49.61MB / 49.61MB             2.6s
+ => => sha256:4dadad3edfd860d6d4fd52d4cbf17e7431a88d64161c62654786e60f331343a8 23.59MB / 23.59MB             3.1s
+ => => extracting sha256:1e60a453843e00d6f3d4242dbd696365f0894e3ca2f02f4ce1ab098d7ff7907f                    1.4s
+ => => sha256:222cb3bce424c387cc9f91f975242473b8be06d3426252fad4895105c051ad28 202.59MB / 202.59MB           9.8s
+ => => sha256:daef33bd5984a4cdc17479467fcc790d865d3759dc80a339124bd53945deba0b 6.47MB / 6.47MB               4.0s
+ => => sha256:cd4a717ed7d5807524a1801600e283b017660dd98445a9d80ad84a1aaa2fecce 15.54MB / 15.54MB             5.7s
+ => => extracting sha256:4dadad3edfd860d6d4fd52d4cbf17e7431a88d64161c62654786e60f331343a8                    0.4s
+ => => extracting sha256:51cd5f8f608f832afd85dc82fbac4aea05183fd7fccf555dd4a53a4bbe06b013                    1.6s
+ => => sha256:4664733f6ad5948a94252c75cf77dec477e860a825e308da3980202fd6381dcf 243B / 243B                   5.1s
+ => => sha256:dc982c946854c22d246b29b04fe2374a1fa4bc8863747ca263c0599c65845206 2.85MB / 2.85MB               5.5s
+ => => extracting sha256:222cb3bce424c387cc9f91f975242473b8be06d3426252fad4895105c051ad28                    4.0s
+ => => extracting sha256:daef33bd5984a4cdc17479467fcc790d865d3759dc80a339124bd53945deba0b                    0.2s
+ => => extracting sha256:cd4a717ed7d5807524a1801600e283b017660dd98445a9d80ad84a1aaa2fecce                    0.3s
+ => => extracting sha256:4664733f6ad5948a94252c75cf77dec477e860a825e308da3980202fd6381dcf                    0.0s
+ => => extracting sha256:dc982c946854c22d246b29b04fe2374a1fa4bc8863747ca263c0599c65845206                    0.1s
+ => [internal] load build context                                                                            0.0s
+ => => transferring context: 36.94kB                                                                         0.0s
+ => [2/7] WORKDIR /code                                                                                      0.3s
+ => [3/7] COPY ./requirements.txt /code/requirements.txt                                                     0.0s
+ => [4/7] RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt                                22.7s
+ => [5/7] RUN useradd user                                                                                   0.1s
+ => [6/7] WORKDIR /home/user/app                                                                             0.0s
+ => [7/7] COPY --chown=user . /home/user/app                                                                 0.0s
+ => exporting to image                                                                                       1.2s
+ => => exporting layers                                                                                      1.2s
+ => => writing image sha256:1cbb55ce65297b993cc4fbe0a712aecef8dc6a2e6fd1bbe6e804b159ecbc2168                 0.0s
+ => => naming to docker.io/library/textgenfastapi:latest                                                     0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/yucsantekr3zb4rig5lka0rv1
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+melo@PRAVISHs-MacBook-Pro pythonProject %
+
+
+############## docker run output log ##################
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.0 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/usr/local/bin/uvicorn", line 8, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.9/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/usr/local/lib/python3.9/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/usr/local/lib/python3.9/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/uvicorn/main.py", line 437, in main
+    run(app, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/uvicorn/main.py", line 463, in run
+    server.run()
+  File "/usr/local/lib/python3.9/site-packages/uvicorn/server.py", line 60, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "/usr/local/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/local/lib/python3.9/site-packages/uvicorn/server.py", line 67, in serve
+    config.load()
+  File "/usr/local/lib/python3.9/site-packages/uvicorn/config.py", line 458, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/usr/local/lib/python3.9/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/user/app/./app.py", line 2, in <module>
+    from transformers import pipeline
+  File "/usr/local/lib/python3.9/site-packages/transformers/__init__.py", line 26, in <module>
+    from . import dependency_versions_check
+  File "/usr/local/lib/python3.9/site-packages/transformers/dependency_versions_check.py", line 16, in <module>
+    from .utils.versions import require_version, require_version_core
+  File "/usr/local/lib/python3.9/site-packages/transformers/utils/__init__.py", line 33, in <module>
+    from .generic import (
+  File "/usr/local/lib/python3.9/site-packages/transformers/utils/generic.py", line 461, in <module>
+    import torch.utils._pytree as _torch_pytree
+  File "/usr/local/lib/python3.9/site-packages/torch/__init__.py", line 870, in <module>
+    from . import _masked
+  File "/usr/local/lib/python3.9/site-packages/torch/_masked/__init__.py", line 420, in <module>
+    def sum(input: Tensor,
+  File "/usr/local/lib/python3.9/site-packages/torch/_masked/__init__.py", line 223, in _apply_docstring_templates
+    example_input = torch.tensor([[-3, -2, -1], [0, 1, 2]])
+/usr/local/lib/python3.9/site-packages/torch/_masked/__init__.py:223: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at  /root/pytorch/torch/csrc/utils/tensor_numpy.cpp:68.)
+  example_input = torch.tensor([[-3, -2, -1], [0, 1, 2]])
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:7860 (Press CTRL+C to quit)
+INFO:     192.168.65.1:20048 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.65.1:20048 - "GET /favicon.ico HTTP/1.1" 404 Not Found
